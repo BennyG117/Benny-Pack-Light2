@@ -2,12 +2,44 @@
     margin: 0;
     padding: 0;
 }
+
+h1{
+    border-radius: 20px;
+    background-color: #a3b18a;
+    border: 3px solid #344e41;
+    color: #344e41;
+}
+
 img {
     height: 75px;
     width: 75px;
     border-radius: 50%;
     background-color: white;
+    border: 3px solid #344e41;
 }
+
+.form-box {
+    border-radius: 20px;
+}
+
+.form-box-a{
+    background-color: #588157;
+    border: 3px solid #344e41;
+    color: #dad7cd;
+
+}
+.form-box-b{
+    background-color: #dad7cd;
+    border: 3px solid #344e41;
+    color: #3a5a40;
+
+}
+.form-box-c{
+    background-color: #588157;
+    border: 3px solid #344e41;
+
+}
+
 
 #mapView {
     height: 125px;
