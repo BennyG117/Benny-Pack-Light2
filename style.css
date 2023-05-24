@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+img {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#mapView {
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+}

@@ -1,0 +1,18 @@
+Benny Pack Light 
+
+Benny Pack Light was made to simplify my trip packing and planning. My goal is to travel with carry-on luguage only. The normal domestic travel baggage restrictions are: 
+1 x carry-on back that does not exceed 22x14x9  
+1 x personal item (aka another bag) that does not exceed 18x14x8
+
+The bags I will be using are a 40L Osprey Farpoint & a 15L Osprey Daypack
+
+The goal of Benny Pack Light is to generate a list of specific packing items that would be needed for any given specific type of trip. The program will generate a list to help me expidite my lengthy packing process. It will specify the items I need to pack based off of user input and some integrated APIs. 
+
+-Input the duration of your trip.
+-Input the location of your trip (use the main destination).
+-Weather API then generates a weather forecast for the specified date and location from the two inputs above
+-Drop-down selection of Trip-type
+
+-Final portion will take the Weather API results added with the Trip-Type selection to produce the required packing list at the bottom of your screen (or the bottom of the web page).
+
+-Use the buttons at the bottom to "share","Download", or "print" the packing list

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
+    ">
+    <link rel="stylesheet"
+        href="style.css">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Benny Pack Light 2</title>
+</head>
+
+<body>
+    <!--Main Container-->
+    <div class="container">
+        <h1>Benny Pack Light</h1>
+        <!-- travel date input - google calendar API-->
+        <div class="row travel-dates">
+            <div class="col-lg-6 col-md-6  col-sml-12 bg-dark text-light border travel-start">
+                <form class="mt-5">
+                    <h5 class="start">
+                        Start Date
+                    </h5>
+                    <img src="imgs/airLift.jpeg"
+                        alt="plane lifting off icon">
+                    <input type="date"
+                        id="start-input">
+                </form>
+
+            </div>
+            <div class="col-lg-6 col-md-6  col-sml-12 bg-success text-light border travel-end">
+                <form class="mt-5">
+                    <h5 class="start">
+                        Return Date
+                    </h5>
+                    <img src="imgs/airLift.jpeg"
+                        alt="plane lifting off icon">
+                    <input type="date"
+                        id="start-input">
+                </form>
+
+            </div>
+        </div>
+        <!-- destination row - google map API-->
+        <div class="row">
+            <div class="col-lg-4 col-md-5  col-sml-12 bg-dark text-light border">
+                <form class="mt-5">
+                    <div class="location-input">
+                        <h5>Destination</h5>
+                        <input type="text"
+                            placeholder="Search Location">
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-8 col-md-7  col-sml-12 bg-success text-light border">
+                <form class="mt-5">
+                    <div class="google-map">
+                        <img id="mapView"
+                            src="imgs/map.png"
+                            alt="view of searcj result of google map">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Trip Focus Row - link JS function for option select generates list @ botttom-->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sml-12 bg-success text-light border">
+                <form class="mt-5">
+                    <div class="trip-select">
+                        <div class="trip-type">
+                            <!-- some type of dropdown input menu -->
+                            <label> Trip Focus:</label>
+                            <select name="Trip Type"
+                                class="focus-option">
+                                <option value="hikingCold">Hiking (Cold)</option>
+                                <option value="fancy">Fancy</option>
+                                <option value="hikingHot">Hiking (Hot)</option>
+                                <option value="beachTrip">Beach</option>
+                                <option value="lakeTrip">Lake</option>
+                                <option value="museumCity">Museum Trip</option>
+                                <option value="nerdTrip">Nerd Trip</option>
+                                <option value="skiTrip">Skiing</option>
+                                <option value="hikingRain">Hiking (Rain)</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!-- weather forecast results - insert weather API-->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sml-12 bg-dark text-light border">
+                <form class="mt-5">
+                    <div class="forecast-results">
+                        <h5>Weather Forecast</h5>
+                        <table>
+                            <tr>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
+                            </tr>
+                            <tr>
+                                <th>97°f</th>
+                                <th>95°f</th>
+                                <th>100°f</th>
+                                <th>105°f</th>
+                                <th>91°f</th>
+                                <th>85°f</th>
+                                <th>81°f</th>
+                            </tr>
+                            <tr>
+                                <th><img src="imgs/sun.png"
+                                        alt="small sun icon"></th>
+                                <th><img src="imgs/sun.png"
+                                        alt="small sun icon"></th>
+                                <th><img src="imgs/hot.jpeg"
+                                        alt="heat warning icon"></th>
+                                <th><img src="imgs/hot.jpeg"
+                                        alt="heat warning icon"></th>
+                                <th><img src="imgs/sun.png"
+                                        alt="small sun icon"></th>
+                                <th><img src="imgs/sun.png"
+                                        alt="small sun icon"></th>
+                                <th><img src="imgs/clouds.png"
+                                        alt="small clouds icon"></th>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- separation of inputs and results-->
+        <hr>
+        <!-- list container - generated list and select weather condition images - link with JS-->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sml-12 bg-secondary text-light border">
+                <form class="mt-5">
+                    <div class="pack-list-row">
+                        <!-- contains small image reminders of trip condition & plans-->
+                        <div class="conditions-row">
+                            <img src="imgs/hiking.png"
+                                alt="small hiking icon">
+                            <img src="imgs/hot.jpeg"
+                                alt="heat warning icon">
+                            <img src="imgs/sun.png"
+                                alt="small sun icon">
+                        </div>
+                        <!-- actual list of all items to pack-->
+                        <div class="items-list">
+                            <textarea id="itemSheet"
+                                name="itemSheet"
+                                id="itemSheet"
+                                cols="30"
+                                rows="30">
+    T-Shirt x 
+    Exercise Shirt x  
+    Polo x 
+    Long-Slvd Shirt x 
+    Sun-Shirt x
+    Dress Shirt x 
+    Under Shirt x 
+    Pajama Shirt x 
+    Jacket x
+    Rain Jacket x
+    Suit Jacket x
+    Ski Jacket x 
+    Tie x 
+    Mask x 
+    Bandana x 
+    Head Band x	
+    Regular Belt x
+    Dress Belt x  
+    Hiking Belt x 
+    Shorts x 
+    Gym Shorts x 
+    Swimsuit x 
+    Hiking Pants x
+    Jeans x 
+    Dress Pants x
+    Pajama Pants x 
+    Pajama Shorts x
+    Waterproof Pants x 
+    Ski Pants x 
+    Briefs x 
+    Winter Undrwear x   
+    Short Socks x 
+    Long Socks x 
+    Winter Socks x 
+    Snapback x 
+    Trail Hat x 
+    Beanie x 
+    Snow Gloves x 
+    Reg Gloves x 
+    Scarf x 
+    Sneakers x 
+    Waterproof Boots x 
+    Reg Hiking Boots x 
+    Dress Shoes x 
+    Water Shoes x 
+    Sandals x
+    Reg-Glasses x 
+    Sunglasses x 
+    Lense Cleaner x 
+    Eye Drops x 
+    Toothpaste x 
+    Toothbrush x 
+    Floss Sticks x 
+    Meds x 
+    Inhaler x  
+    vitamins x 
+    Sunscreen x 
+    Lotion x 
+    Hand Sanitizer x 
+    Clorox Trvl x 
+    Body Wash x 
+    Shampoo x 
+    Face Cleaner x 
+    Chapstick x 
+    Comb x
+    Hair Putty x
+    Deodorant x  
+    Shaving Kit x 
+    Tissues x 
+    Lint Roller x 
+    Shoe Shine x
+    Bug Spray x 
+    Talcum Powder x 
+    Misc BR Items x 
+    Travel Towel  x 
+    Travel Pillow x
+    Hiking Bag x 
+    Sling Bag x 
+    Laundry Bag x
+    Rain Covers x 
+    Laptop & gear x
+    Phone Charger x 
+    Charge Cord x  
+    Travel Btry Sm x 
+    Travel Btry Lrg x 
+    Wireless Buds x
+    Switch & gear x 
+    Extension Cord x 
+    Gum x 
+    Snacks x 
+    Empty Bottle x 
+    Lifting Wraps x 
+    Wallet x 
+    Keys x 
+    Passport x 
+    Silicone Ring x 
+    Ring x 
+    Ring Bandit x 
+    Emgcy Cash x 
+    Notepad & Pen x 
+    Sharpie x 
+    H2O Proof Pouch x  
+    Rmv Swiss Knife x
+    First Aid Kit x
+    MTG Cards x 
+    MTG Playmat x 
+    Counters & Dice x 
+                    </textarea>
+                        </div>
+                                <!-- buttons row -->
+                        <form class="mt-5">
+                            <div class="list-buttons">
+                                <button id="Share">
+                                    Share
+                                </button>
+                                <button id="Download">
+                                    Download
+                                </button>
+                                <button id="Print">
+                                    Print
+                                </button>
+                            </div>
+                        </form>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js
+"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
