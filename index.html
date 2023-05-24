@@ -21,24 +21,24 @@
         <h1>Benny Pack Light</h1>
         <!-- travel date input - google calendar API-->
         <div class="row travel-dates">
-            <div class="col-lg-6 col-md-6  col-sml-12   travel-start form-box form-box-a">
+            <div class="col-lg-6 col-md-6  col-sml-12   travel-start form-box form-box-a lift-row">
                 <form class="mt-5">
                     <h5 class="start">
                         Start Date
                     </h5>
-                    <img src="imgs/airLift.jpeg"
+                    <img src="imgs/airLiftOLD.jpeg"
                         alt="plane lifting off icon">
                     <input type="date"
                         id="start-input">
                 </form>
 
             </div>
-            <div class="col-lg-6 col-md-6  col-sml-12   travel-end form-box form-box-b">
+            <div class="col-lg-6 col-md-6  col-sml-12   travel-end form-box form-box-b return-row">
                 <form class="mt-5">
                     <h5 class="start">
                         Return Date
                     </h5>
-                    <img src="imgs/airLift.jpeg"
+                    <img src="imgs/airLand.png"
                         alt="plane lifting off icon">
                     <input type="date"
                         id="start-input">
@@ -47,8 +47,8 @@
             </div>
         </div>
         <!-- destination row - google map API-->
-        <div class="row">
-            <div class="col-lg-4 col-md-5  col-sml-12   form-box form-box-a">
+        <div class="row destination-row">
+            <div class="col-lg-4 col-md-5  col-sml-12   form-box form-box-a location-search">
                 <form class="mt-5">
                     <div class="location-input">
                         <h5>Destination</h5>
@@ -68,14 +68,18 @@
             </div>
         </div>
         <!-- Trip Focus Row - link JS function for option select generates list @ botttom-->
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sml-12   form-box form-box-b">
+        <div class="row trip-row">
+            <div class="col-lg-12 col-md-12 col-sml-12   form-box form-box-b trip-sub">
                 <form class="mt-5">
+                    <h5 class="trip-title">
+                        Pick Your Trip!
+                    </h5>
                     <div class="trip-select">
                         <div class="trip-type">
                             <!-- some type of dropdown input menu -->
                             <label> Trip Focus:</label>
-                            <select name="Trip Type"
+                            <select onchange="tripSelector(this)"
+                                name="Trip Type"
                                 class="focus-option">
                                 <option value="hikingCold">Hiking (Cold)</option>
                                 <option value="fancy">Fancy</option>
@@ -94,20 +98,23 @@
 
         </div>
         <!-- weather forecast results - insert weather API-->
-        <div class="row">
+        <div class="row weather-row">
             <div class="col-lg-12 col-md-12 col-sml-12   form-box form-box-a">
                 <form class="mt-5">
-                    <div class="forecast-results">
+                    <div class="forecast-title">
                         <h5>Weather Forecast</h5>
-                        <table>
+                    </div>
+                    <div class="forecast-results">
+
+                        <table class="weather-table">
                             <tr>
-                                <th>Monday</th>
-                                <th>Tuesday</th>
-                                <th>Wednesday</th>
-                                <th>Thursday</th>
-                                <th>Friday</th>
-                                <th>Saturday</th>
-                                <th>Sunday</th>
+                                <th>Mon</th>
+                                <th>Tues</th>
+                                <th>Wed</th>
+                                <th>Thurs</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                                <th>Sun</th>
                             </tr>
                             <tr>
                                 <th>97°f</th>
@@ -118,33 +125,41 @@
                                 <th>85°f</th>
                                 <th>81°f</th>
                             </tr>
-                            <tr>
+                            <tr class="forecast-img">
                                 <th><img src="imgs/sun.png"
-                                        alt="small sun icon"></th>
+                                        alt="small sun icon"
+                                        class="img-fluid"></th>
                                 <th><img src="imgs/sun.png"
-                                        alt="small sun icon"></th>
+                                        alt="small sun icon"
+                                        class="img-fluid"></th>
                                 <th><img src="imgs/hot.jpeg"
-                                        alt="heat warning icon"></th>
+                                        alt="heat warning icon"
+                                        class="img-fluid"></th>
                                 <th><img src="imgs/hot.jpeg"
-                                        alt="heat warning icon"></th>
+                                        alt="heat warning icon"
+                                        class="img-fluid"></th>
                                 <th><img src="imgs/sun.png"
-                                        alt="small sun icon"></th>
+                                        alt="small sun icon"
+                                        class="img-fluid"></th>
                                 <th><img src="imgs/sun.png"
-                                        alt="small sun icon"></th>
+                                        alt="small sun icon"
+                                        class="img-fluid"></th>
                                 <th><img src="imgs/clouds.png"
-                                        alt="small clouds icon"></th>
+                                        alt="small clouds icon"
+                                        class="img-fluid"></th>
                             </tr>
                         </table>
                     </div>
                 </form>
             </div>
         </div>
-        <!-- list container - generated list and select weather condition images - link with JS-->
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sml-12   form-box form-box-c">
+        <!--! list container - generated list and select weather condition images - link with JS-->
+        <div class="row list-row">
+            <div class="col-lg-12 col-md-12 col-sml-12   form-box form-box-c list-row-container">
                 <form class="mt-5">
                     <div class="pack-list-row">
                         <!-- contains small image reminders of trip condition & plans-->
+                        <h2>Your Packing List</h2>
                         <div class="conditions-row">
                             <img src="imgs/hiking.png"
                                 alt="small hiking icon">
@@ -154,122 +169,123 @@
                                 alt="small sun icon">
                         </div>
                         <!-- actual list of all items to pack-->
-                        <div class="items-list">
-                            <textarea id="itemSheet"
+                        <div class="container-md	 items-list">
+
+                            <ul id="itemSheet"
                                 name="itemSheet"
                                 id="itemSheet"
                                 cols="30"
                                 rows="30">
-    T-Shirt x 
-    Exercise Shirt x  
-    Polo x 
-    Long-Slvd Shirt x 
-    Sun-Shirt x
-    Dress Shirt x 
-    Under Shirt x 
-    Pajama Shirt x 
-    Jacket x
-    Rain Jacket x
-    Suit Jacket x
-    Ski Jacket x 
-    Tie x 
-    Mask x 
-    Bandana x 
-    Head Band x	
-    Regular Belt x
-    Dress Belt x  
-    Hiking Belt x 
-    Shorts x 
-    Gym Shorts x 
-    Swimsuit x 
-    Hiking Pants x
-    Jeans x 
-    Dress Pants x
-    Pajama Pants x 
-    Pajama Shorts x
-    Waterproof Pants x 
-    Ski Pants x 
-    Briefs x 
-    Winter Undrwear x   
-    Short Socks x 
-    Long Socks x 
-    Winter Socks x 
-    Snapback x 
-    Trail Hat x 
-    Beanie x 
-    Snow Gloves x 
-    Reg Gloves x 
-    Scarf x 
-    Sneakers x 
-    Waterproof Boots x 
-    Reg Hiking Boots x 
-    Dress Shoes x 
-    Water Shoes x 
-    Sandals x
-    Reg-Glasses x 
-    Sunglasses x 
-    Lense Cleaner x 
-    Eye Drops x 
-    Toothpaste x 
-    Toothbrush x 
-    Floss Sticks x 
-    Meds x 
-    Inhaler x  
-    vitamins x 
-    Sunscreen x 
-    Lotion x 
-    Hand Sanitizer x 
-    Clorox Trvl x 
-    Body Wash x 
-    Shampoo x 
-    Face Cleaner x 
-    Chapstick x 
-    Comb x
-    Hair Putty x
-    Deodorant x  
-    Shaving Kit x 
-    Tissues x 
-    Lint Roller x 
-    Shoe Shine x
-    Bug Spray x 
-    Talcum Powder x 
-    Misc BR Items x 
-    Travel Towel  x 
-    Travel Pillow x
-    Hiking Bag x 
-    Sling Bag x 
-    Laundry Bag x
-    Rain Covers x 
-    Laptop & gear x
-    Phone Charger x 
-    Charge Cord x  
-    Travel Btry Sm x 
-    Travel Btry Lrg x 
-    Wireless Buds x
-    Switch & gear x 
-    Extension Cord x 
-    Gum x 
-    Snacks x 
-    Empty Bottle x 
-    Lifting Wraps x 
-    Wallet x 
-    Keys x 
-    Passport x 
-    Silicone Ring x 
-    Ring x 
-    Ring Bandit x 
-    Emgcy Cash x 
-    Notepad & Pen x 
-    Sharpie x 
-    H2O Proof Pouch x  
-    Rmv Swiss Knife x
-    First Aid Kit x
-    MTG Cards x 
-    MTG Playmat x 
-    Counters & Dice x 
-                    </textarea>
+                                <li>T-Shirt x </li>
+                                <li>Exercise Shirt x </li>
+                                <li>Polo x </li>
+                                <li>Long-Slvd Shirt x </li>
+                                <li>Sun-Shirt x </li>
+                                <li>Dress Shirt x </li>
+                                <li>Under Shirt x </li>
+                                <li>Pajama Shirt x </li>
+                                <li>Jacket x </li>
+                                <li>Rain Jacket x </li>
+                                <li>Suit Jacket x </li>
+                                <li>Ski Jacket x </li>
+                                <li>Tie x </li>
+                                <li>Mask x </li>
+                                <li>Bandana x </li>
+                                <li>Head Band x </li>
+                                <li>Regular Belt x</li>
+                                <li>Dress Belt x </li>
+                                <li>Hiking Belt x </li>
+                                <li>Shorts x </li>
+                                <li>Gym Shorts x </li>
+                                <li>Swimsuit x </li>
+                                <li>Hiking Pants x</li>
+                                <li>Jeans x </li>
+                                <li>Dress Pants x</li>
+                                <li>Pajama Pants x </li>
+                                <li>Pajama Shorts x</li>
+                                <li>Waterproof Pants x </li>
+                                <li>Ski Pants x </li>
+                                <li>Briefs x </li>
+                                <li>Winter Undrwear x </li>
+                                <li>Short Socks x </li>
+                                <li>Long Socks x </li>
+                                <li>Winter Socks x </li>
+                                <li>Snapback x </li>
+                                <li>Trail Hat x </li>
+                                <li>Beanie x </li>
+                                <li>Snow Gloves x </li>
+                                <li>Reg Gloves x </li>
+                                <li>Scarf x </li>
+                                <li>Sneakers x </li>
+                                <li>Waterproof Boots x </li>
+                                <li>Reg Hiking Boots x </li>
+                                <li>Dress Shoes x </li>
+                                <li>Water Shoes x </li>
+                                <li>Sandals x</li>
+                                <li>Reg-Glasses x </li>
+                                <li>Sunglasses x </li>
+                                <li>Lense Cleaner x </li>
+                                <li>Eye Drops x </li>
+                                <li>Toothpaste x </li>
+                                <li>Toothbrush x </li>
+                                <li>Floss Sticks x </li>
+                                <li>Meds x </li>
+                                <li>Inhaler x </li>
+                                <li>vitamins x </li>
+                                <li>Sunscreen x </li>
+                                <li>Lotion x </li>
+                                <li>Hand Sanitizer x </li>
+                                <li>Clorox Trvl x </li>
+                                <li>Body Wash x </li>
+                                <li>Shampoo x </li>
+                                <li>Face Cleaner x </li>
+                                <li>Chapstick x </li>
+                                <li>Comb x</li>
+                                <li>Hair Putty x</li>
+                                <li>Deodorant x </li>
+                                <li>Shaving Kit x </li>
+                                <li>Tissues x </li>
+                                <li>Lint Roller x </li>
+                                <li>Shoe Shine x</li>
+                                <li>Bug Spray x </li>
+                                <li>Talcum Powder x </li>
+                                <li>Misc BR Items x </li>
+                                <li>Travel Towel x </li>
+                                <li>Travel Pillow x</li>
+                                <li>Hiking Bag x </li>
+                                <li>Sling Bag x </li>
+                                <li>Laundry Bag x</li>
+                                <li>Rain Covers x </li>
+                                <li>Laptop & gear x</li>
+                                <li>Phone Charger x </li>
+                                <li>Charge Cord x </li>
+                                <li>Travel Btry Sm x </li>
+                                <li>Travel Btry Lrg x </li>
+                                <li>Wireless Buds x</li>
+                                <li>Switch & gear x </li>
+                                <li>Extension Cord x </li>
+                                <li>Gum x </li>
+                                <li>Snacks x </li>
+                                <li>Empty Bottle x </li>
+                                <li>Lifting Wraps x </li>
+                                <li>Wallet x </li>
+                                <li>Keys x </li>
+                                <li>Passport x </li>
+                                <li>Silicone Ring x </li>
+                                <li>Ring x </li>
+                                <li>Ring Bandit x </li>
+                                <li>Emgcy Cash x </li>
+                                <li>Notepad & Pen x </li>
+                                <li>Sharpie x </li>
+                                <li>H2O Proof Pouch x </li>
+                                <li>Rmv Swiss Knife x</li>
+                                <li>First Aid Kit x</li>
+                                <li>MTG Cards x </li>
+                                <li>MTG Playmat x </li>
+                                <li>Counters & Dice x </li>
+                            </ul>
                         </div>
-                                <!-- buttons row -->
+                        <!-- buttons row -->
                         <form class="mt-5">
                             <div class="list-buttons">
                                 <button id="Share">

@@ -3,46 +3,206 @@
     padding: 0;
 }
 
-h1{
+/* body{
+    background-color: #dad7cd;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #344e41, #dad7cd), repeating-radial-gradient(circle at center center, #344e41, #344e41, 37px, transparent 74px, transparent 37px);
+    background-blend-mode: multiply;} */
+
+
+/*! Main Title */
+h1 {
     border-radius: 20px;
     background-color: #a3b18a;
     border: 3px solid #344e41;
     color: #344e41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
 }
 
-img {
-    height: 75px;
+/* edit to all images */
+/* img {
     width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid #344e41;
+} */
+
+/*! Travel Date Row */
+.travel-dates {
+    margin: 5px;
+}
+
+.lift-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.lift-row img {
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background-color: white;
     border: 3px solid #344e41;
 }
 
+.return-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.return-row img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid #344e41;
+}
+
+/*! Destination Row  */
+.destination-row {
+    margin: 2px;
+
+}
+
+.location-search {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* .destination-row img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid #344e41;
+} */
+
+.google-map {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+#mapView {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid #344e41;
+}
+
+/*! Trip Focus Row  */
+.trip-row {
+    padding: 5px;
+}
+
+.trip-sub {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+
+
+/*! weather API row */
+
+.weather-row{
+    margin-bottom: 5px;
+}
+
+.forecast-title{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    
+}
+
+.forecast-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+
+/* .weather-table{
+    justify-content: space-between;
+} */
+
+.weather-row img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid #344e41;
+}
+
+/*! Pack List Row  */
+.list-row-container {
+    height: 600px;
+}
+
+.pack-list-row {
+    color: #dad7cd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 15px;
+    
+}
+
+
+.list-row img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid #344e41;
+}
+
+#itemSheet {
+    width: 100%;
+    height: 350px;
+    border: 2px solid #dad7cd;
+    background-color: #344e41;
+    overflow: scroll;
+    list-style: none;
+}
+
+/*! container color theme edits */
 .form-box {
     border-radius: 20px;
 }
 
-.form-box-a{
+.form-box-a {
     background-color: #588157;
     border: 3px solid #344e41;
     color: #dad7cd;
 
 }
-.form-box-b{
+
+.form-box-b {
     background-color: #dad7cd;
     border: 3px solid #344e41;
     color: #3a5a40;
 
 }
-.form-box-c{
+
+.form-box-c {
     background-color: #588157;
     border: 3px solid #344e41;
 
-}
-
-
-#mapView {
-    height: 125px;
-    width: 125px;
-    border-radius: 50%;
 }
