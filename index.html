@@ -81,6 +81,7 @@
                             <select onchange="tripSelector(this)"
                                 name="Trip Type"
                                 class="focus-option">
+                                <option value="tbd">TBD</option>
                                 <option value="hikingCold">Hiking (Cold)</option>
                                 <option value="fancy">Fancy</option>
                                 <option value="hikingHot">Hiking (Hot)</option>
@@ -288,13 +289,13 @@
                         <!-- buttons row -->
                         <form class="mt-5">
                             <div class="list-buttons">
-                                <button id="Share">
+                                <button type="button" class="btn" id="Share">
                                     Share
                                 </button>
-                                <button id="Download">
+                                <button type="button" class="btn" id="Download">
                                     Download
                                 </button>
-                                <button id="Print">
+                                <button type="button" class="btn" id="Print">
                                     Print
                                 </button>
                             </div>
